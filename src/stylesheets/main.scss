@@ -1,0 +1,23 @@
+@import './footer.scss';
+
+@mixin set-margin($direction,$value) {
+  margin-#{$direction}: $value;
+}
+
+$text-color:orange;
+body {
+  color: lightblue;
+  // color:$text-color ;
+}
+
+.content{
+  .title {
+    font-size: 24px;
+    color: $text-color;
+  }
+  .title_lg {
+    @extend .title;
+    font-size: 34px;
+  }
+  @include set-margin(right,16px);
+}
