@@ -10,7 +10,7 @@ module.exports = {
   entry: './src/javascript/main.js',
   output:{
     path: path.resolve(__dirname,'./dist'),
-    filename:'./javascript/main.js',
+    filename:'./javascript/[name]-[hash].js',
     publicPath:'/',
   },
   module:{
@@ -60,7 +60,7 @@ module.exports = {
         test:/\.(png|jpg|jpeg)/,
         type:'asset/resource',
         generator:{
-          filename:'images/[name][ext]',
+          filename:'images/[name]-[hash][ext]',
         },
         use:[
           // {
@@ -99,7 +99,7 @@ module.exports = {
   },
   plugins:[
     new MiniCssExtractPlugin({
-      filename:'./stylesheets/main.css',
+      filename:'./stylesheets/[name]-[hash].css',
     }),
     new HtmlWebpackPlugin({
       template:'./src/templates/index.pug',
